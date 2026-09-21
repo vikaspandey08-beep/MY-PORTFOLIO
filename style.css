@@ -178,10 +178,12 @@ h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;c
 /* photo */
 .photo-wrap{position:relative;justify-self:center;width:min(320px,80vw);animation:float 6s ease-in-out infinite}
 @keyframes float{50%{transform:translateY(-14px)}}
-.photo-ring{
+photo-ring{
   position:absolute;inset:-14px;border-radius:26px;background:conic-gradient(from 0deg,var(--cyan),var(--violet),var(--pink),var(--cyan));
   filter:blur(16px);opacity:.55;animation:spin 9s linear infinite;
 }
+@keyframes spin{to{transform:rotate(360deg)}}
+
 @keyframes spin{to{transform:rotate(360deg)}}
 .photo-frame{
   position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.14);
