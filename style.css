@@ -330,16 +330,16 @@ footer .mono{color:rgba(255,255,255,.28);font-size:.76rem;display:block;margin-t
   position:fixed;right:1.1rem;bottom:calc(1.1rem + env(safe-area-inset-bottom,0px));z-index:80;
   width:46px;height:46px;border-radius:50%;border:1px solid var(--line);cursor:pointer;
   background:rgba(17,24,39,.9);color:var(--text);backdrop-filter:blur(8px);
-  display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(14px);
+  display:grid;place-items:center;opacity:0;visibility:hidden;will-change:transform,opacity;transform:translateY(14px);
   transition:opacity .3s ease,transform .3s ease,visibility .3s,border-color .2s ease;
 }
-.top-btn.show{opacity:1;visibility:visible;transform:translateY(0)}
+.top-btn.show{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
 .top-btn:hover{border-color:var(--cyan)}
 .top-btn svg{width:18px;height:18px}
 
 /* ---------- reveal on scroll ---------- */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
-.reveal.in{opacity:1;transform:none}
+.reveal{opacity:0;transform:translateY(12px); will-change:transform,opacity; transition: .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:translateY(0);}
 
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
